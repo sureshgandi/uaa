@@ -212,30 +212,105 @@ oauth:
 
 # Default token signing key. Each installation MUST provide a unique key
 # in order for tokens to be usable only on that installation.
-#jwt:
-#  token:
-#    signing-key: |
-#      -----BEGIN RSA PRIVATE KEY-----
-#      MIIEowIBAAKCAQEA0m59l2u9iDnMbrXHfqkOrn2dVQ3vfBJqcDuFUK03d+1PZGbV
-#      ...
-#      fudkijw0dnh28LJqbkFF5wLNtATzyCfzjp+czrPMn9uqLNKt/iVD
-#      -----END RSA PRIVATE KEY-----
-#    claims:
+jwt:
+  token:
+    signing-key: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBiRFpCM/OJUnH
+      Fjow26wEzlDF1+jNbkrhnTY1AGjjZdj50DXShnncoftjW2QfHkxhx5rg0Ls9BKwh
+      4nHpwnSUiFi00oiXvKHBgoVYysXuv4uC93FGWirfMFOWmSuIKM9p3z3DrePvUGXy
+      b5pT9vprHiABS7ToyYL6zozVbktufPjHjupbyXNud+gzlmrpz1FS8yxZQUYLEEa3
+      1912WlL235Hn0UsTS7/zZPIBV1XS3bPx3f/jin8mf0vQLFHYMDolfePNHB83k6W5
+      zx6WkY6sDTXtKfRt6W4jYGIAulWdypKQRGms+kl7UzOt5d2LoxlYlGIOUy7mpltR
+      5e/Pb6vnAgMBAAECggEAB4wsvCUQ/u/wVnh08NaC+QsCFmfLAfFKWqMda+gQrxxC
+      ineGvyeUarjRy3hTHsLj5VpPSB42dx+OsPbvogH94ZRcVUJH+8GU/gLKPYIRlwks
+      S9a85FVRil5hnCQWu7AlFUgUqg7G2VyQJT9vTCqmbcqrzTEiedjwp+RUlLbrmoA+
+      ziO2xEaLJSh5MNeQG7xtYOKfOPzm1HPOPE03m/x40i9xelcHQA2AhUNGVfe/LYIy
+      caDm8iUk9B5Tg918j1aPyORZ3ELnJouLiLvxgSiIokxDrOodMV4rip0VEgEnpNNM
+      DJtSPz67/fsG5lmAH4NXRy6qxDa8VcjBLviR9TY42QKBgQDoeMORM6BjLDwt79lj
+      M3+oJpliORSuhIXDQz0zrV/QxnbhCeQJnx6jL3MWYX49KAIjs8XhfpbMTyKu7TvE
+      LmUTTLR4/7Gz637tz6bHEVeYEK4g2CAr2nApAi3cFAWcQXhE6RUx98s/dTF9wGXI
+      OuIO1fDKo19v8dxI5JLwYHF37wKBgQDVH3tpLxt7kC6BKCKAD7yLE4stAkvk91gt
+      8Fw8uHXP1UR7d+S3UiVGjpQP4p131IEwEfRWHRe2yb61inIJzKvnv66uiOT+ffFJ
+      QbPLhAVIGz1dDE/Nq2ScteTHOOQJRqioCwsSyoDum5s8sViBQaZVzBSp+gBcj4yG
+      aPEUMGxTiQKBgC682NTAhGZr5k12A0ame+valsvgnf/YNOxlAFD7cmAPBqeHzYkB
+      rK8yQvkk8LRq7sMuyYHkaXz6DAcPOwzeJwQST9Zj0d5SYlp9fRJYsjuoXtnLmew3
+      JoWYIpA0lkwr/XodQl2hbAN+FE0r+UqgTAKfkKGs5usivR8KlWAug6GRAoGBAKln
+      XdRM4n6EK8L0IQBEAe1WepErOyJjzU6uuNJ3GQY7kjTGJyHkhMahvGUoD1zZqFqK
+      Wvo8I8ZidFmfE2hgrOAISBRpsgPsHefJ9t01MnGPXWZhy+lCbDX4i0IkIXaSGKuC
+      I6orFvMS8wD6QsxzX4DhOCeoFbN9Uwjfz4jpuKFpAoGAINijlioao9bE/4+SMmvS
+      /qW+i7MYgMwJ2QfnDN1OYUop0/KrYSe7bRUEY59AMs/Fx3nu9Tmrx7dpyd1u/J9v
+      v1FCyzSkdkqCdaMNFh/D2o6LFMMZRyV27Wya0xGif9XznljlzbTSFyC6VGQGqmm3
+      qC/uOyyivFxp37BpYwHwMPw=
+      -----END PRIVATE KEY-----
+    verification-key: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwYkRaQjPziVJxxY6MNus
+      BM5QxdfozW5K4Z02NQBo42XY+dA10oZ53KH7Y1tkHx5MYcea4NC7PQSsIeJx6cJ0
+      lIhYtNKIl7yhwYKFWMrF7r+LgvdxRloq3zBTlpkriCjPad89w63j71Bl8m+aU/b6
+      ax4gAUu06MmC+s6M1W5Lbnz4x47qW8lzbnfoM5Zq6c9RUvMsWUFGCxBGt9fddlpS
+      9t+R59FLE0u/82TyAVdV0t2z8d3/44p/Jn9L0CxR2DA6JX3jzRwfN5Oluc8elpGO
+      rA017Sn0beluI2BiALpVncqSkERprPpJe1MzreXdi6MZWJRiDlMu5qZbUeXvz2+r
+      5wIDAQAB
+      -----END PUBLIC KEY-----
+    #    claims:
 #      exclude:
 #        - authorities
-#    policy:
+    policy:
 #      # Will override global validity policies for the default zone only.
 #      accessTokenValiditySeconds: 3600
 #      refreshTokenValiditySeconds: 3600
-#      activeKeyId: key-id-1
-#      keys:
-#        key-id-1:
-#          signingKey: |
-#            -----BEGIN RSA PRIVATE KEY-----
-#            MIIEowIBAAKCAQEA0m59l2u9iDnMbrXHfqkOrn2dVQ3vfBJqcDuFUK03d+1PZGbV
-#            ...
-#            fudkijw0dnh28LJqbkFF5wLNtATzyCfzjp+czrPMn9uqLNKt/iVD
-#            -----END RSA PRIVATE KEY-----
+ #     activeKeyId: key-id-1
+  #    keys:
+   #     key-id-1:
+    #      signingKey: |
+    #        -----BEGIN PUBLIC KEY-----
+     #       MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7A8GGQJrUyAx2ycVYxFf
+      #      KpQu1KdpXF6UXAx3wQ2d0KhAaxOQfqThAnwn9S86Mm9GINulU+x64Apg0OWgaAg1
+       #     pqonHibWvaW9r938WgckHc5vvSTo0kDIGKoIMhzVNvnfCi530GEd9l2s/45pwSZt
+#            smnEIB8SFMvkcazQNtDoWkMBYENg3qNfhN0B3gbdSCLclO4joLNVV5day28MC/j/
+ #           dw6PBMdgQaWh4A0G8/OIiqp3+yxc8sMdD3xf86ued8H+W6rfG9F1rPVEmpygMw3t
+  #          TVRAUV1S32mXO8V24Ar7a0Tobz4Nb6NBJC2EY10qP+4ZbuL66kTLnaKVI9y5C6kO
+   #         uwIDAQAB
+    #        -----END PUBLIC KEY-----
+     #     signingCert: |
+ #           -----BEGIN PUBLIC KEY-----
+  #          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7A8GGQJrUyAx2ycVYxFf
+   #         KpQu1KdpXF6UXAx3wQ2d0KhAaxOQfqThAnwn9S86Mm9GINulU+x64Apg0OWgaAg1
+    #        pqonHibWvaW9r938WgckHc5vvSTo0kDIGKoIMhzVNvnfCi530GEd9l2s/45pwSZt
+     #       smnEIB8SFMvkcazQNtDoWkMBYENg3qNfhN0B3gbdSCLclO4joLNVV5day28MC/j/
+      #      dw6PBMdgQaWh4A0G8/OIiqp3+yxc8sMdD3xf86ued8H+W6rfG9F1rPVEmpygMw3t
+      #      TVRAUV1S32mXO8V24Ar7a0Tobz4Nb6NBJC2EY10qP+4ZbuL66kTLnaKVI9y5C6kO
+       #     uwIDAQAB
+        #    -----END PUBLIC KEY-----
+         #   -----BEGIN PRIVATE KEY-----
+#            MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDsDwYZAmtTIDHb
+ #           JxVjEV8qlC7Up2lcXpRcDHfBDZ3QqEBrE5B+pOECfCf1Lzoyb0Yg26VT7HrgCmDQ
+  #          5aBoCDWmqiceJta9pb2v3fxaByQdzm+9JOjSQMgYqggyHNU2+d8KLnfQYR32Xaz/
+   #         jmnBJm2yacQgHxIUy+RxrNA20OhaQwFgQ2Deo1+E3QHeBt1IItyU7iOgs1VXl1rL
+    #        bwwL+P93Do8Ex2BBpaHgDQbz84iKqnf7LFzywx0PfF/zq553wf5bqt8b0XWs9USa
+     #       nKAzDe1NVEBRXVLfaZc7xXbgCvtrROhvPg1vo0EkLYRjXSo/7hlu4vrqRMudopUj
+      #      3LkLqQ67AgMBAAECggEABe2ONojKWhHTkj6nrtaKLNKq7fQvMZsTwyTkHsOmjSLe
+       #     TQr2gts3V8ZpEZT0s2eI2DJkwVuqCkcqOCL2wgmZ2fp+keAos3tll58/e/bYKqzJ
+        #    W1cPuNDYit7odORgBlgSsySIexAKnlvj3Z4rtULodIkyhsTdbEPUTMvUaWhvZjTU
+         #   NlRzWBpuAmAmSg5tI1qXnRR9cqGXuDjDz6knxPdrCH65mipYjW+mTjW7x0gL7Q0o
+          #  3JjwFiDk365QXIFvOsofb11YsUBq9WJCSOnzUlggFjy6VSyWOJuSGCanUU2NzKtn
+#            2GEwi+UGtHPfGdST+2Y48pZlvB7N8Wsa171RTi03gQKBgQD0lKudI3bAw8SJKaCf
+ #           xgVrQV/oy16y/vQy7ZV3HXwMStdVr3Cf42lHZ5hSIeGtxEKpImazxRTKNFnDZsht
+  #          U9qhJDQWZsZ369FWjBR4ZN0hGWWgozwm5qodTCh0Up4+RIFyp4EqkLCk/r8uRSLD
+   #         9gzLd0xObir/nYmTnXUO/OIoywKBgQD3FH6MD9ztO79kzAAv0cxfMgKIiZJZnMve
+    #        ugbiKz6F0U8Gc30udkM83mvTFM94x+VVLPkPBL1pX4NkLt0Ujayrc46x+RrKPx5z
+     #       Z61P/r0ssN4DJLkDV83IB9Tzw8Qf35OKNTjWDQWzfZb8q+6OHOCPLAY0WsOLHmwh
+      #      67qrPhYj0QKBgCT0KZHOf+zUJ2fKAFjjpIH2GLWltKM63k6rkv+yVsHMtQhfP5cI
+       #     1ylQv7T5JY4Jr0C6z+Wti1yZ2E4rw3CxUME0JSKVWLtZyAFZnOYr5zVPDwncYARI
+        #    qb9PeHVK3lnuI9jc8ikqP2ZOjzhAfeY50OkVF1RqVNjWRqklC0C+eLVNAoGAR+sL
+         #   OrGTWOo/N5O5qjGjD0J7Qkro8nSVUutK/aIgvMrD+di74z5BLAKB2BsCmOF2e2hv
+          #  xlNW3skScaLCby0dyXoFWwBrL9tXfbf71oELh2qj9L5HrBVurH67GYkuGSj2xQ/g
+#            z01TD3/K5xkUgwEczA/AbpTMvj3Is8btutKDl0ECgYEA2JIOj9LbEf+M/EmDwaih
+ #           uDaQwq5lLQwpGB6mqBE0pK2PVmdkmUhnCN+mqRYvt4ZqMxYrqX/fgi5OL37/NFTR
+  #          YRhdGzACQ0INqLtg1z8vFsOmHSpOxusJCZrz2/wnPqP7JS++XwivT8GrPr2Q9l7i
+   #         UAwn6zvmLbYrBAtCCAtq80g=
+    #        -----END PRIVATE KEY-----  
 #      # Sets the default validity for all zones
 #      global:
 #        accessTokenValiditySeconds: 3600

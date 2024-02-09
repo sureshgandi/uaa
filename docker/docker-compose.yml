@@ -1,7 +1,7 @@
 version: "2"
 services:
   uaa:
-    image: uaa-app:0.0.4
+    image: rockey666/uaa-app:0.0.1
     container_name: docker_uaa_1
     #If you need to import a SSL cert into the keystore be sure to mount the volume ./certs:/uaa/certs and comment in the command property.
     #command: bash -c "keytool -keystore ../../../docker-java-home/jre/lib/security/cacerts -importcert -alias <imported_cert_alias> -file /uaa/certs/<imported_cert_filname> -storepass changeit -noprompt && catalina.sh run"
@@ -32,5 +32,5 @@ services:
       password: admin           
     volumes: 
       - ./uaa.yml:/usr/local/tomcat/webapps/uaa/WEB-INF/classes/uaa.yml
-      - ./log4j2.properties:/usr/local/tomcat/webapps/uaa/WEB-INF/classes/log4j2.properties
+      #- ./log4j2.properties:/usr/local/tomcat/webapps/uaa/WEB-INF/classes/log4j2.properties
       #- ./certs:/uaa/certs
