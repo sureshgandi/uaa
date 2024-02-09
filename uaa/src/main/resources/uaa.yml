@@ -9,6 +9,12 @@
 #spring_profiles: saml
 #spring_profiles: keystone,default,hsqldb
 
+encryption:
+  active_key_label: CHANGE-THIS-KEY
+  encryption_keys:
+  - label: CHANGE-THIS-KEY
+    passphrase: CHANGEME
+    
 #database:
 #  driverClassName: org.postgresql.Driver
 #  url: jdbc:postgresql:uaa
