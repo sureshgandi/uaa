@@ -1,0 +1,36 @@
+version: "2"
+services:
+  uaa:
+    image: uaa-app:0.0.4
+    container_name: docker_uaa_1
+    #If you need to import a SSL cert into the keystore be sure to mount the volume ./certs:/uaa/certs and comment in the command property.
+    #command: bash -c "keytool -keystore ../../../docker-java-home/jre/lib/security/cacerts -importcert -alias <imported_cert_alias> -file /uaa/certs/<imported_cert_filname> -storepass changeit -noprompt && catalina.sh run"
+    ports:
+      - "8080:8080"
+    #restart: on-failure      
+    extra_hosts:
+      - "host.docker.internal:host-gateway"     
+    environment:
+      logging.config: log4j2.properties
+      UAA_CONFIG_URL: localhost
+      UAA_PORT: 8080
+      UAA_BASEURL: http://localhost:8080/uaa
+      spring_profiles: "mysql,default"
+      #CATALINA_OPTS: "-Dspring.profiles.active=mysql,default"
+     # CATALINA_OPTS: "-Dspring.profiles.active=mysql,default  -Djdbc.url=jdbc:mysql://host.docker.internal:3306/uaa?autoReconnect=true -Djdbc.password=admin -Djdbc.user=admin -Dlogging.config=log4j2.properties"
+      #network_mode: "host"
+      CLOUDFOUNDRY_CONFIG_PATH: uaa.yml
+      SECRETS_DIR: uaa.yml
+     # DATABASE_HOST: local
+      #DATABASE_USER: admin
+      #DATABASE_PASSWORD: admin
+      DATABASE_NAME: uaa
+      DATABASE_PORT: 3306
+      driverClassName: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://host.docker.internal:3306/uaa
+      username: admin
+      password: admin           
+    volumes: 
+      - ./uaa.yml:/usr/local/tomcat/webapps/uaa/WEB-INF/classes/uaa.yml
+      - ./log4j2.properties:/usr/local/tomcat/webapps/uaa/WEB-INF/classes/log4j2.properties
+      #- ./certs:/uaa/certs
